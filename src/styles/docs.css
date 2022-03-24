@@ -1,0 +1,33 @@
+.side-navigation-panel
+  .side-navigation-panel-select
+  .side-navigation-panel-select-wrap
+  .side-navigation-panel-select-option-selected {
+  border-left: 8px solid #ae2b22;
+  background-color: #cbe7ff61;
+}
+
+.side-navigation-panel
+  .side-navigation-panel-select
+  .side-navigation-panel-select-wrap
+  .side-navigation-panel-select-option-selected:hover {
+  border-left: 8px solid #ce3c32;
+  background-color: #cbe7ff61;
+}
+
+.side-navigation-panel
+  .side-navigation-panel-select
+  .side-navigation-panel-select-inner
+  .side-navigation-panel-select-inner-wrap
+  .side-navigation-panel-select-inner-option-selected {
+  border-left: 5px solid #ae2b22;
+  background-color: #cbe7ff61;
+}
+
+.side-navigation-panel
+  .side-navigation-panel-select
+  .side-navigation-panel-select-inner
+  .side-navigation-panel-select-inner-wrap
+  .side-navigation-panel-select-inner-option-selected:hover {
+  border-left: 5px solid #ce3c32;
+  background-color: #cbe7ff61;
+}
