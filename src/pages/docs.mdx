@@ -6,7 +6,11 @@
     - AWS Account ID: `647087456535`
     - AWS IAM Policy:
 
-<img src={props.images[0]} style={{ width: 800 }} alt="imageTest"></img>
+<img
+  src={props.images && props.images[0] ? props.images[0] : ""}
+  style={{ width: 800 }}
+  alt="imageTest"
+></img>
 
 <h2 id="subheading1">Subheading 1</h2>
 
