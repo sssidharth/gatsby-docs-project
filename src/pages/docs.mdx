@@ -1,52 +1,60 @@
-<h2 id="AWS_ARN">AWS ARN ID</h2>
+<h2 id="jiraIntegration">
+  How to integrate my JIRA account with NVADR for issue tracking?
+</h2>
 
-1.  We need aws arn id to create IAM account using external user. Please follow the [aws_guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html) to create an ARN id.
-2.  Use the following redhuntlabs aws details
-
-    - AWS Account ID: `647087456535`
-    - AWS IAM Policy:
+- Integrating JIRA will make the task of tracking the issues and their progress easy.
+- Go to settings ⟶ Integrations ⟶ issue tracking/ticketing.
+- Provide your JIRA URL, Email, API Token and JIRA project key.
+  - You use the JIRA URL to access your JIRA projects & tickets.
+    If you are using JIRA cloud, it will look like this [https://your-company-name.atlassian.net].
+  - JIRA Email will be the email-ID you use to access the JIRA software and with which you will generate the API token.
+  - Here is a link on how to create your JIRA API Token -
+    https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
+  - The Project key is a unique identifier of your project where you will track all the issues.
 
 <img
-  src={props.images && props.images[0] ? props.images[0] : ""}
-  style={{ width: 800 }}
-  alt="imageTest"
+  id="jira1"
+  src={
+    props.images && props.images.length !== 0
+      ? props.images[1].jiraIntegration.jira1
+      : ""
+  }
+  style={{ width: 800, marginLeft: 38, marginBottom: 60 }}
+  alt="jira1"
 ></img>
 
-<h2 id="subheading1">Subheading 1</h2>
+<br />
 
-<iframe
-  style={{ width: 800, height: 500 }}
-  src="https://www.youtube.com/embed/Id64silK_7M"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+<img
+  id="jira2"
+  src={
+    props.images && props.images.length !== 0
+      ? props.images[1].jiraIntegration.jira2
+      : ""
+  }
+  style={{ width: 800, marginLeft: 38 }}
+  alt="jira2"
+></img>
 
-<h2 id="subheading2">Subheading 1</h2>
+- Once all the details are provided, click on send details.
+- You will be required to select an Issue Type to complete the integration.
 
-1.  We need aws arn id to create IAM account using external user. Please follow the [aws_guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html) to create an ARN id.
-2.  Use the following redhuntlabs aws details
+<img
+  id="jira3"
+  src={
+    props.images && props.images.length !== 0
+      ? props.images[1].jiraIntegration.jira3
+      : ""
+  }
+  style={{ width: 800, marginLeft: 38 }}
+  alt="jira3"
+></img>
 
-    - AWS Account ID: `647087456535`
-    - AWS IAM Policy:
-
-    1.  We need aws arn id to create IAM account using external user. Please follow the [aws_guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html) to create an ARN id.
-
-3.  Use the following redhuntlabs aws details
-
-    - AWS Account ID: `647087456535`
-    - AWS IAM Policy:
-
-    1.  We need aws arn id to create IAM account using external user. Please follow the [aws_guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html) to create an ARN id.
-
-4.  Use the following redhuntlabs aws details
-
-    - AWS Account ID: `647087456535`
-    - AWS IAM Policy:
-
-<h2 id="subheading3">Subheading 1</h2>
-<h2 id="subheading4">Subheading 1</h2>
-<h2 id="subheading1">Subheading 1</h2>
+- After the JIRA account is added to the NVADR platform, the next step is to configure the JIRA board.
+- Click on the configure option provided.
+- Drag and drop statuses to map your JIRA status with your NVADR status.
+- Click on update to save the changes.
+- Now you can easily track your issue status through your JIRA account.
 
 export default function Layout({ children }) {
   return <>{children}</>

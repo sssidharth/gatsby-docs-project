@@ -5,6 +5,9 @@ import Layout from "../components/layout"
 import { Navigation } from "react-minimal-side-navigation"
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css"
 import Landscape from "../images/Landscape-Photography-steps.jpeg"
+import jiraIntegration1 from "../images/JIRA 1.png"
+import jiraIntegration2 from "../images/JIRA 2.png"
+import jiraIntegration3 from "../images/JIRA 3.png"
 import "../styles/docs.css"
 
 const useStyles = makeStyles(() => ({
@@ -36,10 +39,26 @@ const useStyles = makeStyles(() => ({
 
 const DocsPage = () => {
   const classes = useStyles()
+  const images = [
+    Landscape,
+    {
+      jiraIntegration: {
+        jira1: jiraIntegration1,
+        jira2: jiraIntegration2,
+        jira3: jiraIntegration3,
+      },
+    },
+  ]
+  React.useEffect(() => {
+    const links = document.getElementsByTagName("a")
+    Object.entries(links).forEach(e => {
+      e[1].setAttribute("target", "_blank")
+    })
+  }, [])
 
   const sidebar = () => (
     <Navigation
-      activeItemId="AWS_ARN"
+      activeItemId="jiraIntegration"
       onSelect={({ itemId }) => {
         const element = document.getElementById(itemId)
         const y =
@@ -48,24 +67,20 @@ const DocsPage = () => {
       }}
       items={[
         {
-          title: "AWS ARN ID",
-          itemId: "AWS_ARN",
+          title: "Integrate JIRA Account With NVADR",
+          itemId: "jiraIntegration",
           subNav: [
             {
-              title: "subheading 1",
-              itemId: "subheading1",
+              title: "Entering Jira Creds",
+              itemId: "jira1",
             },
             {
-              title: "subheading 2",
-              itemId: "subheading2",
+              title: "Getting Project Key",
+              itemId: "jira2",
             },
             {
-              title: "subheading 3",
-              itemId: "subheading3",
-            },
-            {
-              title: "subheading 4",
-              itemId: "subheading4",
+              title: "Entering Issue Type",
+              itemId: "jira3",
             },
           ],
         },
@@ -84,7 +99,7 @@ const DocsPage = () => {
             minWidth: 300,
             background: "#f6f8fa",
             borderRight: "0.2px solid #d6d6d6",
-            marginTop: 93,
+            marginTop: 90,
             height: "-webkit-fill-available",
           }}
         >
@@ -95,13 +110,13 @@ const DocsPage = () => {
             display: "flex",
             flexDirection: "column",
             paddingTop: 120,
-            paddingLeft: 300,
+            paddingLeft: 460,
             width: "100%",
             alignItems: "center",
           }}
         >
           <div>
-            <Page images={[Landscape]} />
+            <Page images={images} />
           </div>
         </div>
       </div>
