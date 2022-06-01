@@ -5,9 +5,11 @@ import Layout from "../components/layout"
 import { Navigation } from "react-minimal-side-navigation"
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css"
 import Landscape from "../images/Landscape-Photography-steps.jpeg"
-import jiraIntegration1 from "../images/JIRA 1.png"
-import jiraIntegration2 from "../images/JIRA 2.png"
-import jiraIntegration3 from "../images/JIRA 3.png"
+import jiraIntegration1 from "../images/JIRA1.png"
+import jiraIntegration2 from "../images/JIRA2.png"
+import jiraIntegration3 from "../images/JIRA3.gif"
+import jiraIntegration4 from "../images/JIRA4.gif"
+import jiraIntegration5 from "../images/JIRA5.gif"
 import "../styles/docs.css"
 
 const useStyles = makeStyles(() => ({
@@ -39,6 +41,9 @@ const useStyles = makeStyles(() => ({
 
 const DocsPage = () => {
   const classes = useStyles()
+  const [title, setTitle] = React.useState("jiraIntegration")
+  const params = new URLSearchParams(window.location.search)
+  let paramTitle = params.get("title")
   const images = [
     Landscape,
     {
@@ -46,6 +51,8 @@ const DocsPage = () => {
         jira1: jiraIntegration1,
         jira2: jiraIntegration2,
         jira3: jiraIntegration3,
+        jira4: jiraIntegration4,
+        jira5: jiraIntegration5,
       },
     },
   ]
@@ -54,39 +61,62 @@ const DocsPage = () => {
     Object.entries(links).forEach(e => {
       e[1].setAttribute("target", "_blank")
     })
+    setTitle(paramTitle)
+    document.getElementsByClassName("codeBlock")[0].style.height = "600px"
   }, [])
 
-  const sidebar = () => (
-    <Navigation
-      activeItemId="jiraIntegration"
-      onSelect={({ itemId }) => {
-        const element = document.getElementById(itemId)
-        const y =
-          element.getBoundingClientRect().top + window.pageYOffset + -120
-        window.scrollTo({ top: y, behavior: "smooth" })
-      }}
-      items={[
-        {
-          title: "Integrate JIRA Account With NVADR",
-          itemId: "jiraIntegration",
-          subNav: [
-            {
-              title: "Entering Jira Creds",
-              itemId: "jira1",
-            },
-            {
-              title: "Getting Project Key",
-              itemId: "jira2",
-            },
-            {
-              title: "Entering Issue Type",
-              itemId: "jira3",
-            },
-          ],
-        },
-      ]}
-    />
-  )
+  const navSelect = itemId => {
+    const element = document.getElementById(itemId)
+    const y = element.getBoundingClientRect().top + window.pageYOffset + -120
+    window.scrollTo({ top: y, behavior: "smooth" })
+  }
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      navSelect(title)
+    }, [500])
+  }, [title])
+
+  const sidebar = () => {
+    return (
+      <Navigation
+        activeItemId={title}
+        onSelect={({ itemId }) => navSelect(itemId)}
+        items={[
+          {
+            title: "Integrating JIRA Account With NVADR",
+            itemId: "jiraIntegration",
+            subNav: [
+              {
+                title: "Entering Jira Creds",
+                itemId: "jira1",
+              },
+              {
+                title: "Getting Project Key",
+                itemId: "jira2",
+              },
+              {
+                title: "Entering Issue Type",
+                itemId: "jira3",
+              },
+              {
+                title: "Exporting Issue",
+                itemId: "jira4",
+              },
+              {
+                title: "Syncing Comments",
+                itemId: "jira5",
+              },
+            ],
+          },
+          {
+            title: "AWS ARN",
+            itemId: "aws_arn",
+          },
+        ]}
+      />
+    )
+  }
 
   return (
     <Layout style={{ marginLeft: 0 }}>

@@ -8,7 +8,7 @@
   - You use the JIRA URL to access your JIRA projects & tickets.
     If you are using JIRA cloud, it will look like this [https://your-company-name.atlassian.net].
   - JIRA Email will be the email-ID you use to access the JIRA software and with which you will generate the API token.
-  - Here is a link on how to create your JIRA API Token -
+  - Here is a link on how to create your JIRA API Token -<br/>
     https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/
   - The Project key is a unique identifier of your project where you will track all the issues.
 
@@ -19,7 +19,7 @@
       ? props.images[1].jiraIntegration.jira1
       : ""
   }
-  style={{ width: 800, marginLeft: 38, marginBottom: 60 }}
+  style={{ width: "80%", marginLeft: 38, marginBottom: 60 }}
   alt="jira1"
 ></img>
 
@@ -32,7 +32,7 @@
       ? props.images[1].jiraIntegration.jira2
       : ""
   }
-  style={{ width: 800, marginLeft: 38 }}
+  style={{ width: "80%", marginLeft: 38 }}
   alt="jira2"
 ></img>
 
@@ -46,7 +46,7 @@
       ? props.images[1].jiraIntegration.jira3
       : ""
   }
-  style={{ width: 800, marginLeft: 38 }}
+  style={{ width: "80%", marginLeft: 38 }}
   alt="jira3"
 ></img>
 
@@ -55,6 +55,216 @@
 - Drag and drop statuses to map your JIRA status with your NVADR status.
 - Click on update to save the changes.
 - Now you can easily track your issue status through your JIRA account.
+  <br />
+
+<h3 id="jira4">Export All Issues from Tracker to JIRA Project</h3>
+
+- After you have set up their integration, you can export all their issues with the click of a single button ‘Export To JIRA’.<br/>
+  This will sync all the issues listed in the tracker with your JIRA project along with their statuses.
+
+<img
+  src={
+    props.images && props.images.length !== 0
+      ? props.images[1].jiraIntegration.jira4
+      : ""
+  }
+  style={{ width: "80%", marginLeft: 38 }}
+  alt="jira4"
+></img>
+
+<br />
+
+<h3 id="jira5">Sync your comments</h3>
+
+- Comments under any issue on the NVADR tracker will be synced to the corresponding issue on JIRA immediately,<br/> and comments in any
+  issue on JIRA will be synced to NVADR tracker after an interval of 15 minutes.
+
+<img
+  src={
+    props.images && props.images.length !== 0
+      ? props.images[1].jiraIntegration.jira5
+      : ""
+  }
+  style={{ width: "80%", marginLeft: 38 }}
+  alt="jira5"
+></img>
+<br />
+<br />
+<br />
+<br />
+<br />
+<h2 id="aws_arn">AWS ARN ID</h2>
+
+- We need aws arn id to create IAM account using
+  external user. Please follow the
+  [aws_guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
+  to create an ARN id.
+- Use the following redhuntlabs aws details.
+  - AWS Account ID: `647087456535`
+  - AWS IAM Policy:
+
+```JSON
+ {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "acm:DescribeCertificate",
+                "acm:ListCertificates",
+                "cloudformation:DescribeStacks",
+                "cloudformation:GetStackPolicy",
+                "cloudformation:GetTemplate",
+                "cloudformation:ListStacks",
+                "cloudtrail:DescribeTrails",
+                "cloudtrail:GetEventSelectors",
+                "cloudtrail:GetTrailStatus",
+                "cloudwatch:DescribeAlarms",
+                "cognito-identity:DescribeIdentityPool",
+                "cognito-identity:ListIdentityPools",
+                "cognito-idp:DescribeUserPool",
+                "cognito-idp:ListUserPools",
+                "config:DescribeConfigRules",
+                "config:DescribeConfigurationRecorders",
+                "config:DescribeConfigurationRecorderStatus",
+                "directconnect:DescribeConnections",
+                "dynamodb:DescribeContinuousBackups",
+                "dynamodb:DescribeTable",
+                "dynamodb:ListBackups",
+                "dynamodb:ListTables",
+                "dynamodb:ListTagsOfResource",
+                "ec2:DescribeCustomerGateways",
+                "ec2:DescribeFlowLogs",
+                "ec2:DescribeImages",
+                "ec2:DescribeInstanceAttribute",
+                "ec2:DescribeInstances",
+                "ec2:DescribeNetworkAcls",
+                "ec2:DescribeNetworkInterfaceAttribute",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeRegions",
+                "ec2:DescribeRouteTables",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSnapshotAttribute",
+                "ec2:DescribeSnapshots",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVolumes",
+                "ec2:DescribeVpcPeeringConnections",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeVpnConnections",
+                "ec2:DescribeVpnGateways",
+                "ecr:DescribeImages",
+                "ecr:DescribeRepositories",
+                "ecr:GetLifecyclePolicy",
+                "ecr:GetRepositoryPolicy",
+                "ecr:ListImages",
+                "ecs:DescribeClusters",
+                "ecs:ListAccountSettings",
+                "ecs:ListClusters",
+                "eks:DescribeCluster",
+                "eks:ListClusters",
+                "elasticache:DescribeCacheClusters",
+                "elasticache:DescribeCacheParameterGroups",
+                "elasticache:DescribeCacheSecurityGroups",
+                "elasticache:DescribeCacheSubnetGroups",
+                "elasticfilesystem:DescribeFileSystems",
+                "elasticfilesystem:DescribeMountTargets",
+                "elasticfilesystem:DescribeMountTargetSecurityGroups",
+                "elasticfilesystem:DescribeTags",
+                "elasticloadbalancing:DescribeListeners",
+                "elasticloadbalancing:DescribeLoadBalancerAttributes",
+                "elasticloadbalancing:DescribeLoadBalancerPolicies",
+                "elasticloadbalancing:DescribeLoadBalancers",
+                "elasticloadbalancing:DescribeSSLPolicies",
+                "elasticloadbalancing:DescribeTags",
+                "elasticmapreduce:DescribeCluster",
+                "elasticmapreduce:ListClusters",
+                "guardduty:GetDetector",
+                "guardduty:ListDetectors",
+                "iam:GenerateCredentialReport",
+                "iam:GetAccountPasswordPolicy",
+                "iam:GetCredentialReport",
+                "iam:GetGroup",
+                "iam:GetGroupPolicy",
+                "iam:GetLoginProfile",
+                "iam:GetPolicy",
+                "iam:GetPolicyVersion",
+                "iam:GetRole",
+                "iam:GetRolePolicy",
+                "iam:GetUserPolicy",
+                "iam:ListAccessKeys",
+                "iam:ListAttachedRolePolicies",
+                "iam:ListEntitiesForPolicy",
+                "iam:ListGroupPolicies",
+                "iam:ListGroups",
+                "iam:ListGroupsForUser",
+                "iam:ListInstanceProfilesForRole",
+                "iam:ListMFADevices",
+                "iam:ListPolicies",
+                "iam:ListRolePolicies",
+                "iam:ListRoles",
+                "iam:ListRoleTags",
+                "iam:ListUserPolicies",
+                "iam:ListUsers",
+                "iam:ListUserTags",
+                "iam:ListVirtualMFADevices",
+                "kms:DescribeKey",
+                "kms:GetKeyPolicy",
+                "kms:GetKeyRotationStatus",
+                "kms:ListAliases",
+                "kms:ListGrants",
+                "kms:ListKeys",
+                "lambda:GetFunctionConfiguration",
+                "lambda:GetPolicy",
+                "lambda:ListFunctions",
+                "logs:DescribeMetricFilters",
+                "rds:DescribeDBClusters",
+                "rds:DescribeDBClusterSnapshotAttributes",
+                "rds:DescribeDBClusterSnapshots",
+                "rds:DescribeDBInstances",
+                "rds:DescribeDBParameterGroups",
+                "rds:DescribeDBParameters",
+                "rds:DescribeDBSecurityGroups",
+                "rds:DescribeDBSnapshotAttributes",
+                "rds:DescribeDBSnapshots",
+                "rds:DescribeDBSubnetGroups",
+                "rds:ListTagsForResource",
+                "redshift:DescribeClusterParameterGroups",
+                "redshift:DescribeClusterParameters",
+                "redshift:DescribeClusters",
+                "redshift:DescribeClusterSecurityGroups",
+                "route53:ListHostedZones",
+                "route53:ListResourceRecordSets",
+                "route53domains:ListDomains",
+                "s3:GetBucketAcl",
+                "s3:GetBucketLocation",
+                "s3:GetBucketLogging",
+                "s3:GetBucketPolicy",
+                "s3:GetBucketPolicyStatus",
+                "s3:GetBucketTagging",
+                "s3:GetBucketVersioning",
+                "s3:GetBucketWebsite",
+                "s3:GetEncryptionConfiguration",
+                "s3:ListAllMyBuckets",
+                "secretsmanager:DescribeSecret",
+                "secretsmanager:ListSecrets",
+                "ses:GetIdentityDkimAttributes",
+                "ses:GetIdentityPolicies",
+                "ses:ListIdentities",
+                "ses:ListIdentityPolicies",
+                "sns:GetTopicAttributes",
+                "sns:ListSubscriptions",
+                "sns:ListTopics",
+                "sqs:GetQueueAttributes",
+                "sqs:ListQueues",
+                "ssm:DescribeParameters",
+                "ssm:GetParameters"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+```
 
 export default function Layout({ children }) {
   return <>{children}</>

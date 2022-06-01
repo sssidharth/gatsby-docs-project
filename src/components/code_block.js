@@ -10,6 +10,8 @@ const useStyles = makeStyles(() => ({
     marginTop: "2rem",
     marginBottom: "2rem",
     paddingLeft: "1.5rem",
+    marginLeft: 38,
+    width: "80%",
   },
   language: {
     background: "#ffffff",
@@ -69,7 +71,7 @@ const Code = props => {
 
   return (
     <div className={classes.container}>
-      <div style={{ display: "flex", position: "relative" }}>
+      <div style={{ display: "flex" }}>
         <div className={classes.language}>{`${language}`}</div>
         <div
           style={{
@@ -96,6 +98,7 @@ const Code = props => {
         </button>
       </div>
       <div
+        className="codeBlock"
         style={{
           overflow: "auto",
           background: "#011627",
